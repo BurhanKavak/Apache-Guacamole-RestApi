@@ -56,8 +56,8 @@ None.
 
 Body must be `x-www-form-urlencoded`.
 
-- username (string, required) - Name of the user.
-- password (string, required) - Password of the user.
+- username (string, required) - Kullanıcının adı.
+- password (string, required) - Kullanıcının şifresi.
 
 ```
 username: guacadmin

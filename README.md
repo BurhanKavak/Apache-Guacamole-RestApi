@@ -56,8 +56,8 @@ None.
 
 Body must be `x-www-form-urlencoded`.
 
-- username (string, required) - Name of the user.
-- password (string, required) - Password of the user.
+- username (string, required) - Kullanıcının adı.
+- password (string, required) - Kullanıcının şifresi.
 
 ```
 username: guacadmin
@@ -66,7 +66,7 @@ password: guacadmin
 
 ### Response
 
-#### Status Code
+#### Status Kodu
 
 - 200 - OK
 
@@ -77,9 +77,9 @@ Returns a JSON object.
 - authToken (string) - Auth token.
 - username (string) - Username.
 - dataSource (string) - Datasource.
-- availableDatasources (array) - List of available data sources.
+- availableDatasources (array) - Mevcut veri kaynaklarının listesi.
 
-#### Response Examples
+#### Response Örneği
 
 ```json
 {
@@ -109,9 +109,9 @@ output
 ```
 
 
-## Create RDP Connection
+## RDP Connection Oluşturma
 
-Creates a RDP connection.
+Bir RDP bağlantısı oluşturur.
 
 <!-- omit in toc -->
 ### POST guacamole/api/session/data/{{data_source}}/connections
@@ -226,7 +226,7 @@ Creates a RDP connection.
 
 ### Response
 
-#### Status Code
+#### Status Kodu
 
 - 200 - OK
 

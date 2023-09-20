@@ -11,17 +11,11 @@ import org.springframework.web.client.RestTemplate;
 @RestController
 public class RdpConnectionController {
 
-
     private final String GUACAMOLE_API_BASE_URL = "http://xxx.yyy.com"; // Guacamole API URL'si
-
 
 
     @Autowired
     private RestTemplate restTemplate;
-
-
-
-
 
 
     @PostMapping("/get-token")
@@ -80,4 +74,26 @@ public class RdpConnectionController {
         return responseEntity;
     }
 
+    @GetMapping("/get-history-connections")
+    public ResponseEntity<String> getHistoryConnections(@RequestParam("token") String token) {
+
+        // Guacamole API URL
+        String apiUrl = GUACAMOLE_API_BASE_URL + "/guacamole/api/session/data/postgresql/history/connections?token=" + token;
+
+        // Request Headers oluşturma
+        HttpHeaders headers = new HttpHeaders();
+
+        // RestTemplate oluşturma
+        RestTemplate restTemplate = new RestTemplate();
+
+        // Guacamole API'ye GET isteği gönderme
+        ResponseEntity<String> responseEntity = restTemplate.exchange(
+                apiUrl,
+                HttpMethod.GET,
+                null,
+                String.class
+        );
+
+        return responseEntity;
+    }
 }

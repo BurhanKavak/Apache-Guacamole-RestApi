@@ -233,3 +233,90 @@ Bir RDP bağlantısı oluşturur.
 #### Response Body
 
 **@TODO**
+
+
+## User Oluşturma
+
+Bir kullanıcı oluşturur.
+
+<!-- omit in toc -->
+### POST /api/session/data/{{data_source}}/users
+
+#### Headers
+
+- Content-Type (string, required) - application/json
+
+#### Path Parameters
+
+- data_source (string, required) - Data source
+
+#### Query Parameters
+
+- token (string, required) - Auth Token
+
+#### Request Body
+
+**@TODO**
+
+```json
+{
+  "username": "test",
+  "password": "pass",
+  "attributes": {
+    "disabled": "",
+    "expired": "",
+    "access-window-start": "",
+    "access-window-end": "",
+    "valid-from": "",
+    "valid-until": "",
+    "timezone": null,
+    "guac-full-name": "",
+    "guac-organization": "",
+    "guac-organizational-role": ""
+  }
+}
+```
+
+### Response
+
+#### Status Code
+
+- 200 - OK
+
+#### Response Body
+
+**@TODO**
+
+
+## Kullanıcıo Listesi
+
+Kullanıcı.
+
+<!-- omit in toc -->
+### GET /api/session/data/{{data_source}}/users
+
+#### Headers
+
+None.
+
+#### Path Parameters
+
+- data_source (string, required) - Data source
+
+#### Query Parameters
+
+- token (string, required) - Auth token
+
+#### Request Body
+
+None.
+
+### Response
+
+#### Status Code
+
+- 200 - OK
+
+#### Response Body
+
+**@TODO**

@@ -120,4 +120,32 @@ public class RdpConnectionController {
 
         return responseEntity;
     }
+
+
+    @PostMapping("/create-user")
+    public ResponseEntity<String> createUser(@RequestParam("token") String token, @RequestBody String requestBody) {
+
+        // Guacamole API URL
+        String apiUrl = GUACAMOLE_API_BASE_URL + "/guacamole/api/session/data/postgresql/users?token=" + token;
+
+        // Request Headers oluşturma
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+
+        // Request Body olarak JSON verisi eklemek
+        HttpEntity<String> requestEntity = new HttpEntity<>(requestBody, headers);
+
+        // RestTemplate oluşturma
+        RestTemplate restTemplate = new RestTemplate();
+
+        // Guacamole API'ye POST isteği gönderme
+        ResponseEntity<String> responseEntity = restTemplate.exchange(
+                apiUrl,
+                HttpMethod.POST,
+                requestEntity,
+                String.class
+        );
+
+        return responseEntity;
+    }
 }

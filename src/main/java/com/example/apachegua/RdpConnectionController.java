@@ -96,4 +96,28 @@ public class RdpConnectionController {
 
         return responseEntity;
     }
+
+
+    @GetMapping("/get-user-list")
+    public ResponseEntity<String> getUserList(@RequestParam("token") String token) {
+
+        // Guacamole API URL
+        String apiUrl = GUACAMOLE_API_BASE_URL + "/guacamole/api/session/data/postgresql/users?token=" + token;
+
+        // Request Headers oluşturma
+        HttpHeaders headers = new HttpHeaders();
+
+        // RestTemplate oluşturma
+        RestTemplate restTemplate = new RestTemplate();
+
+        // Guacamole API'ye GET isteği gönderme
+        ResponseEntity<String> responseEntity = restTemplate.exchange(
+                apiUrl,
+                HttpMethod.GET,
+                null,
+                String.class
+        );
+
+        return responseEntity;
+    }
 }

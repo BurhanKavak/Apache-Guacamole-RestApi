@@ -290,7 +290,7 @@ Bir kullanıcı oluşturur.
 
 ## Kullanıcıların Listesi
 
-Kullanıcı.
+Kullanıcı listesi çekme.
 
 <!-- omit in toc -->
 ### GET /api/session/data/{{data_source}}/users
